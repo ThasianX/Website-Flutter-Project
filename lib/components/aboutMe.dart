@@ -1,5 +1,7 @@
-import 'package:adityagurjar/config/assets.dart';
-import 'package:adityagurjar/config/constants.dart';
+
+import 'package:kevinli/widgets/responsive_widget.dart';
+import 'package:kevinli/config/assets.dart';
+import 'package:kevinli/config/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:universal_html/html.dart' as html;
@@ -18,7 +20,8 @@ class AboutMe extends StatelessWidget {
       }
     }
 
-    return Container(
+    return ResponsiveWidget(
+      largeScreen: Container(
       child: Center(
         child: Padding(
           padding: const EdgeInsets.only(bottom: 16.0),
@@ -99,9 +102,15 @@ class AboutMe extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(
-                    width: 50,
-                  ),
+                  Spacer()
+                ]
+              ),
+              SizedBox(
+                height: 40
+              ),
+              Row(
+                children: <Widget>[
+                  Spacer(),
                   Material(
                     // needed
                     color: Colors.transparent,
@@ -115,13 +124,46 @@ class AboutMe extends StatelessWidget {
                       ),
                     ),
                   ),
+                  SizedBox(
+                    width: 50,
+                  ),
+                  Material(
+                    // needed
+                    color: Colors.transparent,
+                    child: InkWell(
+                      onTap: () => openLink(Constants.PROFILE_YOUTUBE), // needed
+                      child: Image.asset(
+                        Assets.youtube,
+                        width: 40,
+                        height: 40,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 50,
+                  ),
+                  Material(
+                    // needed
+                    color: Colors.transparent,
+                    child: InkWell(
+                      onTap: () => openLink(Constants.PROFILE_PODCAST), // needed
+                      child: Image.asset(
+                        Assets.podcast,
+                        width: 40,
+                        height: 40,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
                   Spacer()
-                ],
-              ),
+                ]
+              )
             ],
           ),
         ),
       ),
+    )
     );
   }
 }

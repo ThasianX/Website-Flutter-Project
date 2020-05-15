@@ -1,5 +1,5 @@
-import 'package:adityagurjar/pages/homePage.dart';
-import 'package:adityagurjar/widgets/themeSwitcherWidget.dart';
+import 'package:kevinli/pages/homePage.dart';
+import 'package:kevinli/widgets/themeSwitcherWidget.dart';
 import 'package:flutter/material.dart';
 import 'config/themes.dart';
 
